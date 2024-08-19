@@ -1,0 +1,161 @@
+Body{
+  background-color: hsl(0, 0%, 98%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style for the Navv div */
+.Navv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px 30px;
+  font-family: Arial, sans-serif;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+.count {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  text-align: center;
+}
+.count:hover{
+  cursor: pointer;
+  box-shadow: 12px 6px 6px rgba(0, 0, 0, 0.1);
+}
+.count img {
+  width: 100%;
+  height: 50%;
+  border-radius: 8px;
+ 
+}
+
+/* Style pour les titres */
+.count h4 {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Style pour les paragraphes */
+.count p {
+  margin: 5px 0;
+  color: #666;
+}
+.hm{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+
+ 
+}
+.sr{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 10px 48px 5px 40px;
+}
+.inp{
+  width: 200px;
+  height: 30px;
+  text-align: center;
+}
+label{
+  margin-right: 5px;
+}
+select{
+  width: 136px;
+  border: 3px;
+  height: 20px;
+  text-align: center;
+}
+#cnt option{
+text-align: center;
+border-radius: 3px;
+}
+#cnt option:hover{
+  background-color: #afacac;
+  }
+  .link {
+    text-decoration: none;
+  }
+  .aff {
+    background-color: white;
+    min-height: 100vh; /* S'assure que l'élément couvre au moins 100% de la hauteur de la vue */
+    display: flex;
+    flex-direction: column; /* Pour que le contenu s'empile verticalement */
+  }
+  .contenaire {
+    display: flex;
+    margin-top: 40px;
+    align-items: center;
+  }
+  .btn {
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    padding-left: 35px;
+    padding-top: 20px;
+  }
+  .bt {
+    width: 80px;
+    height: 24px;
+    background-color: aliceblue;
+    border: 1px solid;
+    border-radius: 8px;
+  }
+  .iimg {
+    width: 50%;
+    padding-left: 3%;
+  }
+  .iimg img {
+    width: 100%;
+    border: 1px solid;
+  }
+  .par1 {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255); /* Pour visualiser le conteneur */
+    padding: 20px; /* Pour espacer les éléments */
+    padding-left: 110px;
+    width: 80%; /* Pour que le conteneur prenne toute la largeur disponible */
+  }
+  .p1, .p2 {
+    background-color: white; /* Couleur de fond pour visualiser les blocs */
+    padding: 10px;
+    flex: 1; /* Pour que les éléments prennent une largeur égale */
+    margin: 0 10px; /* Pour ajouter de l'espace entre les blocs */
+    
+  }
+  .p1 h3{
+    margin-bottom: 20px;
+  }
+  .p2 p{
+    padding: 3px;
+  }
+  .p1 p{
+    padding: 3px;
+  }
+  span{
+    font-weight:600;
+    font-size: smaller;
+    
+  }
+  .p2{
+    padding-top: 10%;
+  }
+  
+  .Navv button{
+    background-color: white;
+    border: 0px ;
+  }
