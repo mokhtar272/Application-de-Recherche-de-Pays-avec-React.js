@@ -8,19 +8,24 @@ const Cnt = ({ countries, sear, cat }) => {
         <div className="hm">
             {
                 // eslint-disable-next-line react/prop-types
-                countries.filter(cn=>  sear=== '' && cat=== '' ? cn : cn.name.toLowerCase().includes(sear.toLowerCase() ) && cn.region.toLowerCase().includes(cat.toLowerCase() )).map((cn) => (
+                countries
+                .filter((cn) => {
+                    const matchesSearch = sear === '' || cn.name.toLowerCase().includes(sear.toLowerCase());
+                    const matchesCategory = cat === '' || cn.region.toLowerCase().includes(cat.toLowerCase());
+                    return matchesSearch && matchesCategory;
+                })
+                .map((cn) => (
                     <div className="count" key={cn.name}>
-                       <Link to={`/countrie/${cn.alpha2Code}`} className="link">
-                            <img src={cn.flags.png} alt={`Flag of ${cn.name}`}></img>
+                        <Link to={`/countrie/${cn.alpha2Code}`} className="link">
+                            <img src={cn.flags.png} alt={`Flag of ${cn.name}`} />
                             <h4>{cn.name}</h4>
                             <p>Population: {cn.population}</p>
                             <p>Region: {cn.region}</p>
                             <p>Capital: {cn.capital}</p>
-                      
-                       </Link>
-                            
+                        </Link>
                     </div>
                 ))
+            
             }
         </div>
     );

@@ -9,7 +9,7 @@ const Home = () => {
     const [error, setError] = useState(null); // Initialiser la variable d'état 'error'
 
     useEffect(() => {
-        fetch('http://localhost:8001/countries')
+        fetch('http://localhost:5173/data/data.json')
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok ' + res.statusText);
@@ -19,8 +19,12 @@ const Home = () => {
                 });
             })
             .then(data => {
-                setCountries(data);
+                if (!data || !data.countries || !Array.isArray(data.countries)) {
+                    throw new Error('Invalid data structure');
+                }
+                setCountries(data.countries);
             })
+            
             .catch(error => {
                 setError(error); // Mettre à jour la variable d'état 'error'
                 console.error('There has been a problem with your fetch operation:', error);
