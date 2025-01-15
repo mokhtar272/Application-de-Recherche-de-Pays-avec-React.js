@@ -10,7 +10,7 @@ const Affiche = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('http://localhost:5173/data/data.json')
+        fetch('https://restcountries.com/v3.1/all')
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok ' + res.statusText);

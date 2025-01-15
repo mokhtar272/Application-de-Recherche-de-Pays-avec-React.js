@@ -9,7 +9,7 @@ const Home = () => {
     const [error, setError] = useState(null); // Initialiser la variable d'état 'error'
 
     useEffect(() => {
-        fetch('http://localhost:5173/data/data.json')
+        fetch('https://restcountries.com/v3.1/all')
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok ' + res.statusText);
