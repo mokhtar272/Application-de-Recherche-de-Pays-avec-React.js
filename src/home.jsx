@@ -32,11 +32,11 @@ const Home = () => {
     }, []);
 
     return (
-        <>
+        <div className="p-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
         {error && <div>Error: {error.message}</div>} {/* Afficher le message d'erreur si 'error' existe */}
         <Sr sear={sear} setSear={setSear} setCat={setCat}/>
         {countries && <Cnt countries={countries} sear = {sear} setSear={setSear} cat={cat}/>}
-        </>
+        </div>
             
         
     );
