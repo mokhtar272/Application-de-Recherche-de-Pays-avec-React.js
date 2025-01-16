@@ -18,7 +18,7 @@ const Affiche = () => {
                 return res.json();
             })
             .then(data => {
-                const foundCountry = data.countries.find(c => c.alpha2Code === id);
+                const foundCountry = data.find(c => c.cca2 === id);
                 setCountry(foundCountry);
                 setIsLoading(false);
             })
@@ -71,13 +71,13 @@ const Affiche = () => {
                 <div className="flag-section">
                     <img 
                         src={country.flags.png} 
-                        alt={`Drapeau de ${country.name}`} 
+                        alt={`Drapeau de ${country.name.common}`} 
                         className="flag"
                     />
                 </div>
 
                 <div className="details-section">
-                    <h1 className="country-title">{country.name}</h1>
+                    <h1 className="country-title">{country.name.common}</h1>
                     
                     <div className="info-grid">
                         <div className="info-item">
@@ -100,9 +100,9 @@ const Affiche = () => {
                             <div className="info-label">Langues</div>
                             <div className="info-value languages">
                                 {country.languages ? 
-                                    country.languages.map(lang => (
-                                        <span key={lang.name} className="language-tag">
-                                            {lang.name}
+                                    Object.values(country.languages).map(lang => (
+                                        <span key={lang} className="language-tag">
+                                            {lang}
                                         </span>
                                     )) : 
                                     'N/A'
